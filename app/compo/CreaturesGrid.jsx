@@ -13,7 +13,7 @@ export default function CreaturesGrid({ creatures }) {
     );
   }
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-10 py-14">
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-40 py-14">
       {creatures.map((creature) => (
         <div
           key={creature._id}
@@ -21,14 +21,14 @@ export default function CreaturesGrid({ creatures }) {
            shadow-md border border-gray-800 
            hover:scale-105 transition-all duration-500"
         >
-          <div className="h-[350px] sm:h-[375px] md:h-[400px] lg:h-[520px] rounded-xl overflow-hidden group">
+          <div className="h-[400px] sm:h-[375px] md:h-[400px] lg:h-[520px]  rounded-xl overflow-hidden group">
             <Image
               src={creature.img}
               alt={creature.name}
               width={500}
               height={500}
               priority
-              className="w-full h-full object-cover object-center rounded-xl transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full  object-center rounded-xl transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 

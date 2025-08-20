@@ -104,7 +104,7 @@ export default function MyNav() {
             </button>
           ) : (
             <div className="flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 text-base sm:text-xl rounded-full bg bg-gradient-to-tl from-blue-600 to-purple-700 hover:scale-105 transition-all cursor-pointer duration-300 mt-2 sm:mt-0">
-              <Link href="/login">Log in / Sign up</Link>
+              <Link href="/login">Login</Link>
             </div>
           )}
         </div>
