@@ -13,7 +13,7 @@ export default function CreaturesGrid({ creatures }) {
     );
   }
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-40 py-14">
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-8 sm:py-10 md:py-12 lg:py-14">
       {creatures.map((creature) => (
         <div
           key={creature._id}
