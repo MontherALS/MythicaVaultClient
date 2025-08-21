@@ -25,7 +25,9 @@ export default function EditCreaturePage() {
   //Fetch creature data and put it as defult value input
   useEffect(() => {
     async function fetchCreature() {
-      const res = await fetch(`http://localhost:5000/creatures/${id}`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/creatures/${id}`
+      );
       const data = await res.json();
       setFormData(data);
     }
@@ -44,14 +46,17 @@ export default function EditCreaturePage() {
     e.preventDefault();
     const token = localStorage.getItem("token");
 
-    const res = await authFetch(`http://localhost:5000/creatures/${id}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const res = await authFetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/creatures/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
     if (res) {
       router.push(`/creatures/${id}`);
     }

@@ -25,7 +25,7 @@ export default function Creaturespage() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `http://localhost:5000/creatures?page=${page}&limit=8&race=${active}`
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/creatures?page=${page}&limit=8&race=${active}`
       );
       if (!res.ok) {
         setError({

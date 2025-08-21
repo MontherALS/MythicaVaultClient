@@ -36,14 +36,17 @@ export default function AddCreaturePage() {
     e.preventDefault();
     const token = localStorage.getItem("token");
 
-    const res = await authFetch("http://localhost:5000/creature/add", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const res = await authFetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/creature/add`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
 
     if (res) {
       setMessage(true);

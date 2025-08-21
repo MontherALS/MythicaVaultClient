@@ -24,12 +24,15 @@ export default function Profilepage() {
       if (!token) return console.warn("No token in localStorage");
 
       try {
-        const resData = await authFetch("http://localhost:5000/user/profile", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const resData = await authFetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/user/profile`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         if (!resData) {
-          console.log("Errror", resData);
+          console.log("Error", resData);
         }
         if (resData) {
           setProfileData((prev) => ({
@@ -62,14 +65,17 @@ export default function Profilepage() {
     const token = localStorage.getItem("token");
 
     try {
-      const resData = await authFetch(`http://localhost:5000/user/profile`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updated),
-      });
+      const resData = await authFetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/user/profile`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updated),
+        }
+      );
       if (resData) {
         const updatedProfile = resData;
         setProfileData(updatedProfile);

@@ -52,7 +52,7 @@ export const UserTokenProvider = ({ children }) => {
 
   // Refresh token (stored in cookie)
   async function refreshToken() {
-    const res = await fetch("http://localhost:5000/refresh", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/refresh`, {
       method: "POST",
       credentials: "include",
     });

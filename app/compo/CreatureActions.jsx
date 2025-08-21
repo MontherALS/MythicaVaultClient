@@ -25,7 +25,7 @@ export default function CreatureActions({ creatureId }) {
     }
     const token = localStorage.getItem("token");
     const res = await authFetch(
-      `http://localhost:5000/creatures/${creatureId}`,
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/creatures/${creatureId}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },

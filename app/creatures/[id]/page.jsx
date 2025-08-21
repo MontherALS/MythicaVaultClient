@@ -29,7 +29,9 @@ export default function CreaturePage() {
       });
     }
     async function getCreature() {
-      const res = await fetch(`http://localhost:5000/creatures/${id}`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/creatures/${id}`
+      );
       if (!res.ok && res.status !== 401) {
         console.error(`Error fetching creature: ${res.statusText}`);
         setError({
@@ -50,9 +52,12 @@ export default function CreaturePage() {
     async function getFavCreature() {
       const token = localStorage.getItem("token");
 
-      const res = await authFetch(`http://localhost:5000/user/favorite`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await authFetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/user/favorite`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       if (!res)
         return setError({
@@ -74,13 +79,16 @@ export default function CreaturePage() {
 
     setIsFav(newState);
 
-    const res = await fetch(`http://localhost:5000/user/favorite/${id}`, {
-      method: newState ? "PUT" : "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/user/favorite/${id}`,
+      {
+        method: newState ? "PUT" : "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (!res.ok) {
       setError({
         errorCode: res.status,
