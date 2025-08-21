@@ -8,7 +8,7 @@ import { useContext } from "react";
 import CreaturesGrid from "@/app/compo/CreaturesGrid";
 import CreaturesNav from "@/app/compo/CreaturesNav";
 import Pagnation from "@/app/compo/Pagnation";
-import ErrorPage from "@/app/Error/page";
+import ErrorPage from "@/app/error/page";
 
 export default function regionSlug() {
   const [loading, setLoading] = useState(true);
