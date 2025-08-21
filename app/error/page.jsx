@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import { useContext } from "react";
 import { UserTokenCtx } from "../store/UserContext";
