@@ -1,6 +1,6 @@
 "use client";
 // Import hooks/tools/context
-import { use, useState } from "react";
+import { useState } from "react";
 import { UserTokenCtx } from "@/app/store/UserContext";
 import { useContext } from "react";
 
@@ -67,31 +67,12 @@ export default function AddCreaturePage() {
     }
   }
   // If user is not admin, return access denied message
-  if (!userPayload.admin) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh]">
-        <div className="bg-gradient-to-r from-red-400 to-pink-500 text-white px-8 py-6 rounded-2xl shadow-lg flex flex-col items-center">
-          <svg
-            className="w-12 h-12 mb-3 text-white/80"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M18.364 5.636l-12.728 12.728M5.636 5.636l12.728 12.728"
-            />
-          </svg>
-          <h2 className="text-2xl font-bold mb-2">Access Denied</h2>
-          <p className="text-lg font-medium">
-            You are not authorized to add creatures.
-          </p>
-        </div>
-      </div>
-    );
+  const isAdmin = userPayload?.admin ?? false;
+
+  if (!isAdmin) {
+    return <div>Access Denied</div>;
   }
+
   return (
     <>
       {/* Submit Result Message  */}
