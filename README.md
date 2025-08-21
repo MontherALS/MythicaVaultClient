@@ -21,9 +21,14 @@ Frontend application for **MythicaVault** — a Next.js + Tailwind CSS app that 
 | Styling     | Tailwind CSS |
 | State Mgmt  | React Hooks, Context API |
 | API         | REST API (Express backend) |
-| Deployment  | Vercel / Netlify |
+| Deployment  | Vercel |
 
 ---
 
-## 🌍 Live Demo
+## Live Demo
 🔗 [MythicaVault Website](https://mythica-vault-client-viex.vercel.app)
+
+---
+
+## Backend repo
+🔗 [Backend](https://github.com/MontherALS/MythicaVaultServer)
