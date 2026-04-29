@@ -4,7 +4,7 @@ Frontend application for **MythicaVault** — a Next.js + Tailwind CSS app that 
 
 ---
 
-## ✨ Features
+##  Features
 - **Dynamic Pages**: Browse mythical creatures, legends, and symbolism  
 - **Auth Integration**: Login & signup with JWT tokens from backend  
 - **Responsive UI**: Built with Tailwind CSS for all screen sizes  
@@ -23,10 +23,6 @@ Frontend application for **MythicaVault** — a Next.js + Tailwind CSS app that 
 | API         | REST API (Express backend) |
 | Deployment  | Vercel |
 
----
-
-## Live Demo
-🔗 [MythicaVault Website](https://mythica-vault-client-viex.vercel.app)
 
 ---
 
